@@ -21,7 +21,7 @@ while mass >= 0:
         old_physics_list.append(old_val)
     else:
         old_val = "ВЗРЫВ (1/0!)"
-        old_physics_list.append(5.0)  # Условное значение для графика
+        old_physics_list.append(5.0)
 
     if mass > 0:
         my_val = round((1 / mass) - (1 / (mass + mass**2)), 2)
@@ -37,7 +37,7 @@ while mass >= 0:
 print("-" * 55)
 print("Испарение завершено! Показываем график...")
 
-# 2. ПОСТРОЕНИЕ ГРАФИКА
+# 2. ПОСТРОЕНИЕ И ПОКАЗ ГРАФИКА
 plt.figure(figsize=(8, 5))
 plt.plot(masses_list, old_physics_list, label="Старая физика (Деление на ноль)", color="red", linestyle="--", marker="x")
 plt.plot(masses_list, my_model_list, label="Твоя модель (Квантовый кристалл)", color="green", linewidth=2, marker="o")
@@ -49,5 +49,11 @@ plt.gca().invert_xaxis()
 plt.legend()
 plt.grid(True)
 
+# Сохраняем картинку в ту же папку
 plt.savefig("black_hole_plot.png")
+
+# Открываем окно с графиком
 plt.show()
+
+# Задержка, чтобы чёрное окно консоли не закрывалось сразу
+input("\nНажми Enter, чтобы завершить работу...")
