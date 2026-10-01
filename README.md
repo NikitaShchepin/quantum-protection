@@ -6,3 +6,4 @@
 2. Убедитесь, что у вас установлен **Python** и библиотека **matplotlib**:
    ```bash
    pip install matplotlib
+(открывать лучше через IDLE)
